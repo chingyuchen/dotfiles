@@ -7,8 +7,9 @@ fi
 # get self file's parent directory
 DIR=$(dirname ${BASH_SOURCE[0]})
 
-source ${DIR}/prompt.sh
+# source ${DIR}/prompt.sh
 source ${DIR}/alias.sh
+source ${DIR}/tmux.sh
 
 export VISUAL=vim
 export EDITOR="$VISUAL"

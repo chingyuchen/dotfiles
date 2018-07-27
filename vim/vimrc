@@ -3,9 +3,27 @@ scriptencoding utf-8
 set encoding=utf-8
 set termencoding=utf-8
 set fileencodings=utf-8,ucs-bom,sjis,big5,latin1
+" -----------------------------------------------------------------------------
+" Package managing pathogen
+" -----------------------------------------------------------------------------
+execute pathogen#infect()
 
 
-" ------- Coloring ------------------------------------------------------------
+" -----------------------------------------------------------------------------
+" Syntastic
+" -----------------------------------------------------------------------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" -----------------------------------------------------------------------------
+" Coloring
+" -----------------------------------------------------------------------------
 syntax on
 " color scheme may overwrite the highlights
 " colorscheme kolor

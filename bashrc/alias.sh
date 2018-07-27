@@ -24,4 +24,4 @@ alias h="history"
 alias vir="vim -R"
 alias server='python -m SimpleHTTPServer'
 alias ptt='ssh bbsu@ptt.cc'
-
+alias mountblt='sshfs -p 22 chingyuc@dev:/nail/home/chingyuc/blt ~/dev -oauto_cache,reconnect,defer_permissions,negative_vncache,volname=Dev'

@@ -42,7 +42,7 @@ set mouse=a
 set ruler
 set colorcolumn=80
 set cmdheight=2
-set listchars=eol:¬,tab:┊\ 
+set listchars=tab:┊\ 
 set list
 set tabstop=4
 set shiftwidth=4
@@ -69,15 +69,6 @@ hi statuslineC2 ctermbg=236 ctermfg=248
 hi statuslineC3 ctermbg=238 ctermfg=248
 hi statuslineC4 ctermbg=240 ctermfg=248
 
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?l:branchname:''
-endfunction
-
 " Find out current buffer's size and output it.
 function! FileSize()
   let bytes = getfsize(expand('%:p'))
@@ -101,17 +92,17 @@ function! FileSize()
   endif
 endfunction
 
-set statusline+=%#statuslineC1#
-set statusline+=\ (%{StatuslineGit()})
-set statusline+=\ %F%m%r%h%w
-set statusline+=\ %#statuslineC2#
-set statusline+=%=
+"set statusline+=%#statuslineC1#
+"set statusline+=\ (%{StatuslineGit()})
+"set statusline+=\ %F%m%r%h%w
+"set statusline+=\ %#statuslineC2#
+"set statusline+=%=
 "set statusline+=\ %-3(%{FileSize()}%)
-set statusline+=\ %{&ff}┊\ %Y┊\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\ %#statuslineC3#
-set statusline+=\ \%03.3b=0x%02.2B
-set statusline+=\ %#statuslineC4#
-set statusline+=\ %l/%L:%v\ 
+"set statusline+=\ %{&ff}┊\ %Y┊\ %{&fileencoding?&fileencoding:&encoding}
+"set statusline+=\ %#statuslineC3#
+"set statusline+=\ \%03.3b=0x%02.2B
+"set statusline+=\ %#statuslineC4#
+"set statusline+=\ %l/%L:%v\ 
 
 
 " ------- Highlights ----------------------------------------------------------
